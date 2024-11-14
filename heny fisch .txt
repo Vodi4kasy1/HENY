@@ -4020,13 +4020,6 @@ Teleporting:AddButton({
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1310.048095703125, -805.292236328125, -162.34507751464844)
     end
 })
-  
-Teleporting:AddButton({
-    Title = "Место для фарма",
-    Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3143, 138, 1481)
-    end
-})
 
 -- Teleporting button for "Статуя Суверенитета"
 Teleporting:AddButton({
