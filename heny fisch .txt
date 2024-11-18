@@ -3055,6 +3055,7 @@ local Tap = {
 	Shop = Window:AddTab({ Title = "Shopee", Icon = "shopping-bag"}),
 	Configs = Window:AddTab({Title = "Configs", Icon = "diamond"}),
 	Teleport = Window:AddTab({Title = "Teleport", Icon = "asterisk"}),
+        Teleport1 = Window:AddTab({Title = "places for farming", Icon = "asterisk"}),
 	Settings = Window:AddTab({Title = "Settings", Icon = "settings"})
 }
 
@@ -4082,12 +4083,12 @@ wait()
 })
 end
 
-local Paragraph = Teleporting.Main:CreateParagraph("Места для фарма", {
+local Paragraph = Teleport1.Main:CreateParagraph("Места для фарма", {
     Title = "Места для фарма",
     Content = "Места для фарма"
 })
 
-Teleporting:AddButton({
+Teleport1:AddButton({
     Title = "Acid (место для фарма)",
     Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
