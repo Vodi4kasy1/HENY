@@ -3055,7 +3055,7 @@ local Tap = {
 	Shop = Window:AddTab({ Title = "Shopee", Icon = "shopping-bag"}),
 	Configs = Window:AddTab({Title = "Configs", Icon = "diamond"}),
 	Teleport = Window:AddTab({Title = "Teleport", Icon = "asterisk"}),
-        farm = Window:AddTab({Title = "places for farming", Icon = "asterisk"}),
+        Teleport1 = Window:AddTab({Title = "Places for farming", Icon = "asterisk"}),
 	Settings = Window:AddTab({Title = "Settings", Icon = "settings"})
 }
 
@@ -4054,7 +4054,14 @@ Teleporting:AddButton({
     end
 })
 
-farm:AddButton({
+Teleporting:AddButton({
+    Title = "Кислота",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
+    end
+})
+
+Teleport1:AddButton({
     Title = "Кислота",
     Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
