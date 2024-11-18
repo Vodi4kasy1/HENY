@@ -4082,11 +4082,6 @@ Teleporting:AddButton({
     end
 })
 
-local Paragraph = Teleporting.Main:CreateParagraph("Места для фарма", {
-    Title = "Места для фарма",
-    Content = ""
-})
-
 Teleporting:AddButton({
     Title = "Кислота",
     Callback = function()
