@@ -4054,6 +4054,13 @@ Teleporting:AddButton({
     end
 })
 
+farm:AddButton({
+    Title = "Кислота",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
+    end
+})
+
 -- Teleporting button for "Terrapin Island"
 Teleporting:AddButton({
     Title = "Enchant Relic",
@@ -4083,13 +4090,6 @@ wait()
 })
 end
 
-
-farm:AddButton({
-    Title = "Acid (место для фарма)",
-    Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
-    end
-})
 
 function sendwebhook(url, data)
 	local HttpService = game:GetService("HttpService")
