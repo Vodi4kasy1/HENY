@@ -4076,18 +4076,12 @@ Teleporting:AddButton({
 })
 
 Teleporting:AddButton({
-    Title = "золотая рыба (заброшенные берега)",
+    Title = "farm заброшенные берега",
     Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(--2684, 165, 1734)
     end
 })
 
-Teleporting:AddButton({
-    Title = "золотой конёк (заброшенные берега)",
-    Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3146, 137, 1457)
-    end
-})
 
 -- Teleporting button for "Terrapin Island"
 Teleporting:AddButton({
