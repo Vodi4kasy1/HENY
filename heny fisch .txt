@@ -4055,16 +4055,56 @@ Teleporting:AddButton({
 })
 
 Teleporting:AddButton({
+    Title = "Vertigo",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-112, -515, 1040)
+    end
+})
+
+Teleporting:AddButton({
+    Title = "The Depths Lobby",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -705, 1225)
+    end
+})
+
+Teleporting:AddButton({
+    Title = "The Depths",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(577, -704, 1230)
+    end
+})
+
+Teleporting:AddButton({
+    Title = "The Depths Shop",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(950, -712, 1265)
+    end
+})
+
+local Paragraph = Teleporting.Main:CreateParagraph("Места для фарма", {
+    Title = "Места для фарма",
+    Content = ""
+})
+
+Teleporting:AddButton({
     Title = "Кислота",
     Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
     end
 })
 
-Teleport1:AddButton({
-    Title = "Кислота",
+Teleporting:AddButton({
+    Title = "золотая рыба (заброшенные берега)",
     Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(--2684, 165, 1734)
+    end
+})
+
+Teleporting:AddButton({
+    Title = "золотой конёк (заброшенные берега)",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3146, 137, 1457)
     end
 })
 
