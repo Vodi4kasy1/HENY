@@ -4062,23 +4062,9 @@ Teleporting:AddButton({
 })
 
 Teleporting:AddButton({
-    Title = "The Depths Lobby",
-    Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -705, 1225)
-    end
-})
-
-Teleporting:AddButton({
     Title = "The Depths",
     Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(577, -704, 1230)
-    end
-})
-
-Teleporting:AddButton({
-    Title = "The Depths Shop",
-    Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(950, -712, 1265)
     end
 })
 
