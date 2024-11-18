@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
 	Title = "Heny",
-	SubTitle = "Ура Скрипт на фиш",
+	SubTitle = "no palce",
 	TabWidth = 120,
 	Size = UDim2.fromOffset(550, 350),
 	Acrylic = false, 
@@ -4081,6 +4081,18 @@ wait()
     end
 })
 end
+
+local Paragraph = Teleporting.Main:CreateParagraph("Места для фарма", {
+    Title = "Места для фарма",
+    Content = "Места для фарма"
+})
+
+Teleporting:AddButton({
+    Title = "Acid (место для фарма)",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1791, -143, -3408)
+    end
+})
 
 
 function sendwebhook(url, data)
