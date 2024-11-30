@@ -1,0 +1,263 @@
+-- Загрузка библиотеки OrionLib
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Создание окна
+local Window = OrionLib:MakeWindow({Name = "Fisch 1487.9", HidePremium = false})
+
+-- Добавление вкладки "Main"
+local MainTab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    Premium = false
+})
+
+-- Добавление вкладки "Teleport"
+local TeleportingTab = Window:MakeTab({
+    Name = "Teleport",
+    Icon = "rbxassetid://4483345998",
+    Premium = false
+})
+
+-- Переменные для хранения состояния и соединений
+local toggle1Active = false
+local toggle2Active = false
+local toggle3Active = false
+local toggle4Active = false
+local toggle1Connection
+local toggle2Connection
+local toggle3Connection
+local toggle4Connection
+
+-- Добавление первого переключателя
+MainTab:AddToggle({
+    Name = "Auto Cast",
+    Default = false,
+    Callback = function(value)
+        toggle1Active = value
+        
+        if toggle1Active then
+            print("Auto Cast включен")
+            toggle1Connection = game:GetService("RunService").Heartbeat:Connect(function()
+                local args = {
+                    [1] = 100,
+                    [2] = 1
+                }
+                game:GetService("Players").LocalPlayer.Character:FindFirstChild("Aurora Rod").events.cast:FireServer(unpack(args))
+                wait(2) -- Ждем 2 секунды перед следующей итерацией
+            end)
+        else
+            print("Auto Cast выключен")
+            if toggle1Connection then
+                toggle1Connection:Disconnect() -- Отключаем соединение, если переключатель выключен
+                toggle1Connection = nil -- Обнуляем переменную
+            end
+        end
+    end    
+})
+
+-- Добавление второго переключателя
+MainTab:AddToggle({
+    Name = "Auto Finish",
+    Default = false,
+    Callback = function(value)
+        toggle2Active = value
+        
+        if toggle2Active then
+            print("Auto Finish включен")
+            toggle2Connection = game:GetService("RunService").Heartbeat:Connect(function()
+                local args = {
+                    [1] = 100,
+                    [2] = false
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("reelfinished"):FireServer(unpack(args))
+                wait(2) -- Ждем 2 секунды перед следующей итерацией
+            end)
+        else
+            print("Auto Finish выключен")
+            if toggle2Connection then
+                toggle2Connection:Disconnect() -- Отключаем соединение, если переключатель выключен
+                toggle2Connection = nil -- Обнуляем переменную
+            end
+        end
+    end    
+})
+
+-- Добавление третьего переключателя
+MainTab:AddToggle({
+    Name = "Авто оценка рыбы в руках",
+    Default = false,
+    Callback = function(value)
+        toggle3Active = value
+        
+        if toggle3Active then
+            print("Авто оценка рыбы включена")
+            toggle3Connection = game:GetService("RunService").Heartbeat:Connect(function()
+                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Appraiser"):WaitForChild("appraiser"):WaitForChild("appraise"):InvokeServer()
+                wait(2) -- Ждем 2 секунды перед следующей итерацией
+            end)
+        else
+            print("Авто оценка рыбы выключена")
+            if toggle3Connection then
+                toggle3Connection:Disconnect() -- Отключаем соединение, если переключатель выключен
+                toggle3Connection = nil -- Обнуляем переменную
+            end
+        end
+    end    
+})
+
+-- Добавление четвертого переключателя
+MainTab:AddToggle({
+    Name = "Авто продажа всей рыбы",
+    Default = false,
+    Callback = function(value)
+        toggle4Active = value
+        
+        if toggle4Active then
+            print("Авто продажа всей рыбы включена")
+            toggle4Connection = game:GetService("RunService").Heartbeat:Connect(function()
+                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Marc Merchant"):WaitForChild("merchant"):WaitForChild("sellall"):InvokeServer()
+                wait(2) -- Ждем 2 секунды перед следующей итерацией
+            end)
+        else
+            print("Авто продажа всей рыбы выключена")
+            if toggle4Connection then
+                toggle4Connection:Disconnect() -- Отключаем соединение, если переключатель выключен
+                toggle4Connection = nil -- Обнуляем переменную
+            end
+        end
+    end    
+})
+
+-- Кнопка для продажи рыбы в руках
+MainTab:AddButton({
+    Name = "Продать рыбу в руках",
+    Callback = function()
+        workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Marc Merchant"):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+    end    
+})
+
+-- Кнопка для продажи всей рыбы
+MainTab:AddButton({
+    Name = "Продать всю рыбу",
+    Callback = function()
+        workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Marc Merchant"):WaitForChild("merchant"):WaitForChild("sellall"):InvokeServer()
+    end    
+})
+
+-- Кнопка для оценки рыбы в руках
+MainTab:AddButton({
+    Name = "Оценить рыбу в руках",
+    Callback = function()
+        workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Appraiser"):WaitForChild("appraiser"):WaitForChild("appraise"):InvokeServer()
+    end    
+})
+
+-- Добавление кнопок телепортации в вкладку "Teleport"
+local Teleporting = TeleportTab:AddSection('Teleport') do
+    -- Кнопка телепортации на "Остров Санстоун"
+    Teleporting:AddButton({
+        Title = "Остров Санстоун",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-913.630615234375, 137.29348754882812, -1129.8995361328125)
+        end
+    })
+
+    -- Кнопка телепортации на "Рослит Бэй"
+    Teleporting:AddButton({
+        Title = "Рослит Бэй",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1501.675537109375, 133, 416.2070007324219)
+        end
+    })
+
+    -- Кнопка телепортации на "Случайные острова"
+    Teleporting:AddButton({
+        Title = "Случайные острова",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(237.6944580078125, 139.34976196289062, 43.103424072265625)
+        end
+    })
+
+    -- Кнопка телепортации на "Мусвуд"
+    Teleporting:AddButton({
+        Title = "Мусвуд",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(433.7972106933594, 147.07003784179688, 261.80218505859375)
+        end
+    })
+
+    -- Кнопка телепортации на "Исполнительный штаб"
+    Teleporting:AddButton({
+        Title = "Исполнительный штаб",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36.46199035644531, -246.55001831054688, 205.77120971679688)
+        end
+    })
+
+    -- Кнопка телепортации на "Зачарование комната"
+    Teleporting:AddButton({
+        Title = "Зачарование комната",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1310.048095703125, -805.292236328125, -162.34507751464844)
+        end
+    })
+
+    -- Кнопка телепортации на "Статуя Суверенитета"
+    Teleporting:AddButton({
+        Title = "Статуя Суверенитета",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(22.098665237426758, 159.01470947265625, -1039.8543701171875)
+        end
+    })
+
+    -- Кнопка телепортации на "Мушгроувское болото"
+    Teleporting:AddButton({
+        Title = "Мушгроувское болото",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2442.805908203125, 130.904052734375, -686.1648559570312)
+        end
+    })
+
+    -- Кнопка телепортации на "Снежный остров"
+    Teleporting:AddButton({
+        Title = "Снежный остров",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2589.534912109375, 134.9249267578125, 2333.099365234375)
+        end
+    })
+
+    -- Кнопка телепортации на "Terrapin Island"
+    Teleporting:AddButton({
+        Title = "Terrapin Island",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(152.3716278076172, 154.91015625, 2000.9171142578125)
+        end
+    })
+
+    -- Кнопка телепортации на "Vertigo"
+    Teleporting:AddButton({
+        Title = "Vertigo",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-112, -515, 1040)
+        end
+    })
+
+    -- Кнопка телепортации на "The Depths"
+    Teleporting:AddButton({
+        Title = "The Depths",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(577, -704, 1230)
+        end
+    })
+
+    -- Кнопка телепортации на "Enchant Relic"
+    Teleporting:AddButton({
+        Title = "Enchant Relic",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1309.2784423828125, -802.427001953125, -83.36397552490234)
+        end
+    })
+end
+
+-- Отображение GUI
+OrionLib:Init()
