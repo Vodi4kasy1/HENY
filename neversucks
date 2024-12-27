@@ -14,7 +14,7 @@ local Tab = TabSection:Tab({
 })
 
 local Section = Tab:Section({
-    text = "| New Gui | New Scripts |"
+    text = " | New Gui | New Scripts |"
 })
 
 local Tab2 = TabSection:Tab({
