@@ -362,14 +362,14 @@ local Section6 = Tab5:Section({
     text = "Multi"
 })
 
-Section5:Button({
+Section6:Button({
     text = "Dex v3 (work)",
     callback = function()
         loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Dex.lua")()
 		end,
 })
 
-Section5:Button({
+Section6:Button({
     text = "Infinite Yield",
     callback = function()
         loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Infinite%20Yield.lua")()
