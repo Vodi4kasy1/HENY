@@ -22,6 +22,14 @@ local Tab2 = TabSection:Tab({
     icon = "rbxassetid://7999345313",
 })
 
+local Section1488 = Tab2:Section({
+    text = "Aim"
+})
+
+local Section1487 = Tab2:Section({
+    text = "Fov"
+})
+
 local Section2 = Tab2:Section({
     text = "Player"
 })
@@ -46,14 +54,6 @@ Section2:Slider({
 
 local Section3 = Tab2:Section({
     text = "Esp"
-})
-
-local Section1488 = Tab2:Section({
-    text = "Aim"
-})
-
-local Section1487 = Tab2:Section({
-    text = "Fov"
 })
 
 -- Функция для включения чамсов на игроках
