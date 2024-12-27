@@ -376,16 +376,12 @@ Sectionuniversal:Button({
 		end,
 })
 
-local Section1488 = Tab2:Section({
-    text = "Aimbot"
-})
-
 -- Aimbot Toggle
 local aimbotEnabled = false
 local targetPart = "Head"  -- Default target part
 local aimbotKey = Enum.KeyCode.Z  -- Default keybind for enabling/disabling the aimbot
 
-Section1488:Toggle({
+Section2:Toggle({
     text = "Enable Aimbot",
     state = aimbotEnabled,
     callback = function(state)
@@ -395,7 +391,7 @@ Section1488:Toggle({
 })
 
 -- Dropdown for selecting the target part (Head or Torso)
-Section1488:Dropdown({
+Section2:Dropdown({
     text = "Target Part",
     list = {"Head", "Torso"},
     default = "Head",
@@ -406,7 +402,7 @@ Section1488:Dropdown({
 })
 
 -- Keybind for toggling Aimbot
-Section1488:Keybind({
+Section2:Keybind({
     text = "Aimbot",
     default = aimbotKey,
     callback = function(key)
