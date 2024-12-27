@@ -375,10 +375,11 @@ Sectionuniversal:Button({
 })
 
 local aimbotEnabled = false
-local targetPart = "Head"  -- Default target part
-local aimbotKey = Enum.KeyCode.Z  -- Default keybind for enabling/disabling the aimbot
+local targetPart = "Head"  -- По умолчанию цель — голова
+local aimbotKey = Enum.KeyCode.Z  -- По умолчанию клавиша для включения/выключения аимбота
 
-Section2:Toggle({
+-- Переключатель аимбота
+Section1488:Toggle({
     text = "Enable Aimbot",
     state = aimbotEnabled,
     callback = function(state)
@@ -387,8 +388,8 @@ Section2:Toggle({
     end
 })
 
--- Dropdown for selecting the target part (Head or Torso)
-Section2:Dropdown({
+-- Дропдаун для выбора целевой части (голова или торс)
+Section1488:Dropdown({
     text = "Target Part",
     list = {"Head", "Torso"},
     default = "Head",
@@ -398,32 +399,71 @@ Section2:Dropdown({
     end
 })
 
--- Keybind for toggling Aimbot
-Section2:Keybind({
+-- Клавиша для переключения аимбота
+Section1488:Keybind({
     text = "Toggle Aimbot Key",
     default = aimbotKey,
     callback = function(key)
-        aimbotEnabled = not aimbotEnabled  -- Toggle the aimbot state
+        aimbotEnabled = not aimbotEnabled  -- Переключение состояния аимбота
         print("Aimbot toggled. Enabled:", aimbotEnabled)
     end
 })
 
--- Function to check if the player is visible (not blocked by walls)
-local function isVisible(part)
-    local Camera = game.Workspace.CurrentCamera
-    local origin = Camera.CFrame.Position
-    local direction = (part.Position - origin).Unit
-    local raycastParams = RaycastParams.new()
-    raycastParams.FilterDescendantsInstances = {game.Players.LocalPlayer.Character}
-    raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-    local raycastResult = workspace:Raycast(origin, direction * 500, raycastParams)
-    return not raycastResult or raycastResult.Instance:IsDescendantOf(part.Parent)
-end
+-- Создание секции для визуальных настроек (Section1487)
+local Section1487 = Tab2:Section({
+    text = "FOV Circle Settings"
+})
 
--- Function to get the closest player to aim at
+-- Переменные для FOV круга
+local fovEnabled = false
+local fovOutlineOnly = false
+local fovCircleRadius = 100
+local fovCircle = Drawing.new("Circle")
+fovCircle.Visible = false
+fovCircle.Color = Color3.new(1, 1, 1)
+fovCircle.Thickness = 2
+fovCircle.NumSides = 100
+fovCircle.Radius = fovCircleRadius
+fovCircle.Transparency = 1
+
+-- Переключатель для отображения FOV круга
+Section1487:Toggle({
+    text = "Enable FOV Circle",
+    state = fovEnabled,
+    callback = function(state)
+        fovEnabled = state
+        fovCircle.Visible = fovEnabled
+        print("FOV Circle enabled:", fovEnabled)
+    end
+})
+
+-- Переключатель для outline в FOV круге
+Section1487:Toggle({
+    text = "Outline Only",
+    state = fovOutlineOnly,
+    callback = function(state)
+        fovOutlineOnly = state
+        fovCircle.Filled = not fovOutlineOnly
+        print("FOV Circle outline only:", fovOutlineOnly)
+    end
+})
+
+-- Слайдер для изменения радиуса FOV круга
+Section1487:Slider({
+    text = "FOV Circle Size",
+    min = 10,
+    max = 200,
+    callback = function(size)
+        fovCircle.Radius = size
+        fovCircleRadius = size
+        print("FOV Circle radius:", fovCircleRadius)
+    end
+})
+
+-- Функция для получения ближайшего игрока
 local function getClosestPlayer()
     local closestPlayer = nil
-    local shortestDistance = math.huge  -- Start with a very large distance
+    local shortestDistance = math.huge  -- Начинаем с очень большого расстояния
 
     local Camera = game.Workspace.CurrentCamera
     for _, player in pairs(game.Players:GetPlayers()) do
@@ -432,7 +472,7 @@ local function getClosestPlayer()
             local screenPoint, onScreen = Camera:WorldToViewportPoint(part.Position)
             if onScreen then
                 local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - Vector2.new(game:GetService("UserInputService"):GetMouseLocation().X, game:GetService("UserInputService"):GetMouseLocation().Y)).Magnitude
-                if distance < shortestDistance and isVisible(part) then
+                if distance < shortestDistance then
                     closestPlayer = player
                     shortestDistance = distance
                 end
@@ -443,7 +483,7 @@ local function getClosestPlayer()
     return closestPlayer
 end
 
--- Aimbot logic
+-- Логика аимбота
 game:GetService("RunService").RenderStepped:Connect(function()
     if aimbotEnabled then
         local closestPlayer = getClosestPlayer()
@@ -454,5 +494,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 Camera.CFrame = CFrame.new(Camera.CFrame.Position, target.Position)
             end
         end
+    end
+
+    -- Обновление FOV круга
+    if fovEnabled then
+        local mouseLocation = game:GetService("UserInputService"):GetMouseLocation()
+        fovCircle.Position = mouseLocation
     end
 end)
