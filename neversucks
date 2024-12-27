@@ -48,6 +48,14 @@ local Section3 = Tab2:Section({
     text = "Esp"
 })
 
+local Section1488 = Tab2:Section({
+    text = "Aim"
+})
+
+local Section1487 = Tab2:Section({
+    text = "Fov"
+})
+
 -- Функция для включения чамсов на игроках
 local function enableChams()
     for _, player in pairs(game.Players:GetPlayers()) do
@@ -87,14 +95,6 @@ Section3:Toggle({
             disableChams()
         end
     end
-})
-
-local Section1488 = Tab2:Section({
-    text = "Aim"
-})
-
-local Section1487 = Tab2:Section({
-    text = "Fov"
 })
 
 local TabSection = Window:TabSection({
