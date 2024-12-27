@@ -365,7 +365,7 @@ local Section6 = Tab5:Section({
 Section5:Button({
     text = "Dex v3 (work)",
     callback = function()
-        loadstring(game:HttpGet"myguitutnaxuy")()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Dex.lua")()
 		end,
 })
 
