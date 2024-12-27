@@ -454,8 +454,8 @@ Section1487:Toggle({
 -- Слайдер для изменения радиуса FOV круга
 Section1487:Slider({
     text = "FOV Circle Size",
-    min = 0,
-    max = 1488,
+    min = 10,
+    max = 450,
     callback = function(size)
         fovCircle.Radius = size
         fovCircleRadius = size
