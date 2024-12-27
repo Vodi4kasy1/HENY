@@ -375,3 +375,91 @@ Sectionuniversal:Button({
         loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Infinite%20Yield.lua")()
 		end,
 })
+
+local Section1488 = Tab:Section({
+    text = "Aimbot"
+})
+
+-- Aimbot Toggle
+local aimbotEnabled = false
+local targetPart = "Head"  -- Default target part
+local aimbotKey = Enum.KeyCode.Z  -- Default keybind for enabling/disabling the aimbot
+
+Section1488:Toggle({
+    text = "Enable Aimbot",
+    state = aimbotEnabled,
+    callback = function(state)
+        aimbotEnabled = state
+        print("Aimbot enabled:", aimbotEnabled)
+    end
+})
+
+-- Dropdown for selecting the target part (Head or Torso)
+Section1488:Dropdown({
+    text = "Target Part",
+    list = {"Head", "Torso"},
+    default = "Head",
+    callback = function(selected)
+        targetPart = selected
+        print("Target part set to:", targetPart)
+    end
+})
+
+-- Keybind for toggling Aimbot
+Section1488:Keybind({
+    text = "Aimbot",
+    default = aimbotKey,
+    callback = function(key)
+        aimbotEnabled = not aimbotEnabled  -- Toggle the aimbot state
+        print("Aimbot toggled. Enabled:", aimbotEnabled)
+    end
+})
+
+-- Function to check if the player is visible (not blocked by walls)
+local function isVisible(part)
+    local Camera = game.Workspace.CurrentCamera
+    local origin = Camera.CFrame.Position
+    local direction = (part.Position - origin).Unit
+    local raycastParams = RaycastParams.new()
+    raycastParams.FilterDescendantsInstances = {game.Players.LocalPlayer.Character}
+    raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+    local raycastResult = workspace:Raycast(origin, direction * 500, raycastParams)
+    return not raycastResult or raycastResult.Instance:IsDescendantOf(part.Parent)
+end
+
+-- Function to get the closest player to aim at
+local function getClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = math.huge  -- Start with a very large distance
+
+    local Camera = game.Workspace.CurrentCamera
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player ~= game.Players.LocalPlayer and player.Character and player.Character:FindFirstChild(targetPart) then
+            local part = player.Character[targetPart]
+            local screenPoint, onScreen = Camera:WorldToViewportPoint(part.Position)
+            if onScreen then
+                local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - Vector2.new(game:GetService("UserInputService"):GetMouseLocation().X, game:GetService("UserInputService"):GetMouseLocation().Y)).Magnitude
+                if distance < shortestDistance and isVisible(part) then
+                    closestPlayer = player
+                    shortestDistance = distance
+                end
+            end
+        end
+    end
+
+    return closestPlayer
+end
+
+-- Aimbot logic
+game:GetService("RunService").RenderStepped:Connect(function()
+    if aimbotEnabled then
+        local closestPlayer = getClosestPlayer()
+        if closestPlayer and closestPlayer.Character then
+            local target = closestPlayer.Character:FindFirstChild(targetPart) or closestPlayer.Character:FindFirstChild("UpperTorso")
+            if target then
+                local Camera = game.Workspace.CurrentCamera
+                Camera.CFrame = CFrame.new(Camera.CFrame.Position, target.Position)
+            end
+        end
+    end
+end)
