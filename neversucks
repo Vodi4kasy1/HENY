@@ -376,7 +376,7 @@ Sectionuniversal:Button({
 		end,
 })
 
-local Section1488 = Tab:Section({
+local Section1488 = Tab2:Section({
     text = "Aimbot"
 })
 
