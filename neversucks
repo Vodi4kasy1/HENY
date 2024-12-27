@@ -376,7 +376,6 @@ Sectionuniversal:Button({
 		end,
 })
 
--- Aimbot Toggle
 local aimbotEnabled = false
 local targetPart = "Head"  -- Default target part
 local aimbotKey = Enum.KeyCode.Z  -- Default keybind for enabling/disabling the aimbot
@@ -403,12 +402,18 @@ Section2:Dropdown({
 
 -- Keybind for toggling Aimbot
 Section2:Keybind({
-    text = "Aimbot",
+    text = "Toggle Aimbot Key",
     default = aimbotKey,
     callback = function(key)
         aimbotEnabled = not aimbotEnabled  -- Toggle the aimbot state
         print("Aimbot toggled. Enabled:", aimbotEnabled)
     end
+})
+
+-- Creating the second Tab (Tab2)
+local Tab2 = TabSection:Tab({
+    text = "Visual Settings",
+    icon = "rbxassetid://7999345313",
 })
 
 -- Function to check if the player is visible (not blocked by walls)
