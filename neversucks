@@ -358,18 +358,18 @@ Section5:Button({
 		end,
 })
 
-local Section6 = Tab5:Section({
+local Sectionuniversal = Tab5:Section({
     text = "Multi"
 })
 
-Section6:Button({
+Sectionuniversal:Button({
     text = "Dex v3 (work)",
     callback = function()
         loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Dex.lua")()
 		end,
 })
 
-Section6:Button({
+Sectionuniversal:Button({
     text = "Infinite Yield",
     callback = function()
         loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Infinite%20Yield.lua")()
