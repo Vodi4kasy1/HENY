@@ -17,6 +17,10 @@ local Section = Tab:Section({
     text = " | New Gui | New Scripts |"
 })
 
+local Section1488 = Tab2:Section({
+    text = "Aim"
+})
+
 local Tab2 = TabSection:Tab({
     text = "Main",
     icon = "rbxassetid://7999345313",
@@ -380,7 +384,7 @@ local aimbotEnabled = false
 local targetPart = "Head"  -- Default target part
 local aimbotKey = Enum.KeyCode.Z  -- Default keybind for enabling/disabling the aimbot
 
-Section2:Toggle({
+Section1488:Toggle({
     text = "Enable Aimbot",
     state = aimbotEnabled,
     callback = function(state)
@@ -390,7 +394,7 @@ Section2:Toggle({
 })
 
 -- Dropdown for selecting the target part (Head or Torso)
-Section2:Dropdown({
+Section1488:Dropdown({
     text = "Target Part",
     list = {"Head", "Torso"},
     default = "Head",
@@ -401,19 +405,13 @@ Section2:Dropdown({
 })
 
 -- Keybind for toggling Aimbot
-Section2:Keybind({
+Section1488:Keybind({
     text = "Toggle Aimbot Key",
     default = aimbotKey,
     callback = function(key)
         aimbotEnabled = not aimbotEnabled  -- Toggle the aimbot state
         print("Aimbot toggled. Enabled:", aimbotEnabled)
     end
-})
-
--- Creating the second Tab (Tab2)
-local Tab2 = TabSection:Tab({
-    text = "Visual Settings",
-    icon = "rbxassetid://7999345313",
 })
 
 -- Function to check if the player is visible (not blocked by walls)
