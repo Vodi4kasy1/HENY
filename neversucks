@@ -26,6 +26,14 @@ local Section2 = Tab2:Section({
     text = "Player"
 })
 
+local Section1488 = Tab2:Section({
+    text = "Aim"
+})
+
+local Section1487 = Tab2:Section({
+    text = "Fov"
+})
+
 Section2:Slider({
     text = "Speed Player",
     min = 16,
@@ -407,11 +415,6 @@ Section1488:Keybind({
         aimbotEnabled = not aimbotEnabled  -- Переключение состояния аимбота
         print("Aimbot toggled. Enabled:", aimbotEnabled)
     end
-})
-
--- Создание секции для визуальных настроек (Section1487)
-local Section1487 = Tab2:Section({
-    text = "FOV Circle Settings"
 })
 
 -- Переменные для FOV круга
