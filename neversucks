@@ -302,3 +302,76 @@ Section4:Button({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Domadicoof/Domadicoof/main/Domadichub/NottoGay/Start.ranscript"))()
 		end,
 })
+
+local TabSection = Window:TabSection({
+    text = "Universal | By Heny"
+})
+
+local Tab5 = TabSection:Tab({
+    text = "Main",
+    icon = "rbxassetid://7999345313",
+})
+
+local Section5 = Tab5:Section({
+    text = "Universal"
+})
+
+Section5:Button({
+    text = "Extronix Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://etronix.wtf/script/"))()
+		end,
+})
+
+Section5:Button({
+    text = "Yt Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/ujazYyfG"))();
+		end,
+})
+
+Section5:Button({
+    text = "Universal Hub",
+    callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/universal222221121/mama/main/big'))()
+		end,
+})
+
+Section5:Button({
+    text = "universal Hub (2)",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
+		end,
+})
+
+Section5:Button({
+    text = "Universal Hub (3)",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/lollypophub/main/lollypophubV5.6",true))()
+		end,
+})
+
+Section5:Button({
+    text = "Universal Hub (4)",
+    callback = function()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/WinterDinder/oldfehub/main/boronide%20level%20obfuscation%20lol")()
+		end,
+})
+
+local Section6 = Tab5:Section({
+    text = "Multi"
+})
+
+Section5:Button({
+    text = "Dex v3 (work)",
+    callback = function()
+        loadstring(game:HttpGet"myguitutnaxuy")()
+		end,
+})
+
+Section5:Button({
+    text = "Infinite Yield",
+    callback = function()
+        loadstring(game:HttpGet"myguitutnaxuy")()
+		end,
+})
