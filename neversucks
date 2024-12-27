@@ -372,6 +372,6 @@ Section5:Button({
 Section5:Button({
     text = "Infinite Yield",
     callback = function()
-        loadstring(game:HttpGet"myguitutnaxuy")()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/Infinite%20Yield.lua")()
 		end,
 })
