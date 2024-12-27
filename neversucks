@@ -26,14 +26,6 @@ local Section2 = Tab2:Section({
     text = "Player"
 })
 
-local Section1488 = Tab2:Section({
-    text = "Aim"
-})
-
-local Section1487 = Tab2:Section({
-    text = "Fov"
-})
-
 Section2:Slider({
     text = "Speed Player",
     min = 16,
@@ -95,6 +87,14 @@ Section3:Toggle({
             disableChams()
         end
     end
+})
+
+local Section1488 = Tab2:Section({
+    text = "Aim"
+})
+
+local Section1487 = Tab2:Section({
+    text = "Fov"
 })
 
 local TabSection = Window:TabSection({
