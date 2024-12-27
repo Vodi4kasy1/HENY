@@ -1,0 +1,304 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/UI-Libraries/main/Neverlose/source.lua"))()
+
+local Window = Library:Window({
+    text = "NeverSucks"
+})
+
+local TabSection = Window:TabSection({
+    text = "Main | By Heny"
+})
+
+local Tab = TabSection:Tab({
+    text = "Info",
+    icon = "rbxassetid://7999345313",
+})
+
+local Section = Tab:Section({
+    text = "| New Gui | New Scripts |"
+})
+
+local Tab2 = TabSection:Tab({
+    text = "Main",
+    icon = "rbxassetid://7999345313",
+})
+
+local Section2 = Tab2:Section({
+    text = "Player"
+})
+
+Section2:Slider({
+    text = "Speed Player",
+    min = 16,
+    max = 250,
+    callback = function(number)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (number)
+    end
+})
+
+Section2:Slider({
+    text = "Jump Power Player",
+    min = 50,
+    max = 300,
+    callback = function(number)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (number)
+    end
+})
+
+
+
+local Section3 = Tab2:Section({
+    text = "Esp"
+})
+
+-- Функция для включения чамсов на игроках
+local function enableChams()
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player ~= game.Players.LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            -- Создаем Highlight объект для чамсов
+            if not player.Character:FindFirstChild("Chams") then
+                local chams = Instance.new("Highlight")
+                chams.Name = "Chams"
+                chams.Adornee = player.Character
+                chams.FillColor = Color3.new(0, 0, 0)
+                chams.FillTransparency = 0.3 
+                chams.OutlineTransparency = 0 
+                chams.Parent = player.Character
+            end
+        end
+    end
+end
+
+-- Функция для отключения чамсов на игроках
+local function disableChams()
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player.Character and player.Character:FindFirstChild("Chams") then
+            player.Character.Chams:Destroy()
+        end
+    end
+end
+
+-- Toggle обработчик
+Section3:Toggle({
+    text = "Chams",
+    state = false, -- Начальное состояние
+    callback = function(state)
+        print("Toggle current: ", state)
+        if state then
+            enableChams()
+        else
+            disableChams()
+        end
+    end
+})
+
+local TabSection = Window:TabSection({
+    text = "Scripts | By Heny"
+})
+
+local Tab3 = TabSection:Tab({
+    text = "Main",
+    icon = "rbxassetid://7999345313",
+})
+
+local Section4 = Tab3:Section({
+    text = "Mm2"
+})
+
+Section4:Button({
+    text = "XHub",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"))() 
+    end,
+})
+
+Section4:Button({
+    text = "Lunar Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vwSaraa/LunarHub/main/mm2"))()
+    end,
+})
+
+Section4:Button({
+    text = "Era Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Eblan19/875578/main/dolbaeb9867"))()
+    end,
+})
+
+Section4:Button({
+    text = "Admin pannel",
+    callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/MarsQQ/ScriptHubScripts/master/MM2 Admin Panel'),true))()
+    end,
+})
+
+Section4:Button({
+    text = "Чото там",
+    callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
+    end,
+})
+
+local Section4 = Tab3:Section({
+    text = "Yba"
+})
+
+Section4:Button({
+    text = "Era Hub v2",
+    callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7b0411235ac7e2d87839e0d070ceaa7b.lua"))()
+    end,
+})
+
+Section4:Button({
+    text = "Xenon v3",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Vezise/vezzyscripts/main/xenonv3_source"))()
+    end,
+})
+
+Section4:Button({
+    text = "Bitch Boy v3",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/v3.lua"))()
+    end,
+})
+
+Section4:Button({
+    text = "Не ебу как называется",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Vezise/vezzyscripts/main/ybadestroyer"))()
+    end,
+})
+
+Section4:Button({
+    text = "Сбр фарм",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Vezise/vezzyscripts/main/ybaisassv3"))()
+    end,
+})
+
+
+local Section4 = Tab3:Section({
+    text = "Da Hood"
+})
+
+Section4:Button({
+    text = "SpaCex",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/spacexrandom/Lua/main/DaHood"))()
+		end,
+})
+
+local Section4 = Tab3:Section({
+    text = "Fisch"
+})
+
+Section4:Button({
+    text = "Average Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/AverageHub/1980eccce4133d77fb24d166dc296125/raw/2d9c88acc21a302d92aed0e8b6f0dcd287c8b96b/gistfile1.txt"))()
+		end,
+})
+
+Section4:Button({
+    text = "Alchemy",
+    callback = function()
+        loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+		end,
+})
+
+Section4:Button({
+    text = "Speed Hub X",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+		end,
+})
+
+Section4:Button({
+    text = "Hutao",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HutaoHubs/Hutaohubs2.0/refs/heads/main/FischV2.lua"))()
+		end,
+})
+
+Section4:Button({
+    text = "Lyth",
+    callback = function()
+        script_key = '';
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/53be22e52466e056e4928630b76b4a8c.lua"))()
+		end,
+})
+
+Section4:Button({
+    text = "Nebora",
+    callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/499fa8eaaae391c6c3c77f2640811357.lua"))()
+		end,
+})
+
+local Section4 = Tab3:Section({
+    text = "KAT"
+})
+
+Section4:Button({
+    text = "MrPectable",
+    callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/MrPectable/MrPectableSource/main/v1.lua')))() 
+		end,
+})
+
+Section4:Button({
+    text = "DarkyyWare-kat",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main"))()
+		end,
+})
+
+local Section4 = Tab3:Section({
+    text = "Murderers VS Sheriffs Duels"
+})
+
+Section4:Button({
+    text = "Quantumix Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/un_QuantumIXBYPASSBYBYFRON.COM", true))()
+		end,
+})
+
+local Tab4 = TabSection:Tab({
+    text = "Main2",
+    icon = "rbxassetid://7999345313",
+})
+
+local Section4 = Tab4:Section({
+    text = "Blox Fruit"
+})
+
+Section4:Button({
+    text = "Xeter Hub",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Loader/main/Xeter.lua"))()
+		end,
+})
+
+Section4:Button({
+    text = "Loader",
+    callback = function()
+        loadstring(game:HttpGet("https://gitlab.com/littlekiller2927/deltacore/-/raw/main/deltabf.lua"))()
+		end,
+})
+
+Section4:Button({
+    text = "Loader",
+    callback = function()
+        loadstring(game:HttpGet("https://gitlab.com/littlekiller2927/deltacore/-/raw/main/deltabf.lua"))()
+		end,
+})
+
+Section4:Button({
+    text = "Domadic Hub (op)",
+    callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Domadicoof/Domadicoof/main/Domadichub/NottoGay/Start.ranscript"))()
+		end,
+})
