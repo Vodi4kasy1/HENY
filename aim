@@ -1,0 +1,355 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "MyScreenGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Name = "MyImageLabel"
+imageLabel.Size = UDim2.new(0, 200, 0, 200) 
+imageLabel.Position = UDim2.new(0.5, -100, 0.5, -100) 
+imageLabel.Image = "rbxassetid://135620202347154" 
+imageLabel.BackgroundTransparency = 1 
+imageLabel.Parent = screenGui
+
+local uiCornerImage = Instance.new("UICorner")
+uiCornerImage.CornerRadius = UDim.new(0, 20)
+uiCornerImage.Parent = imageLabel
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Name = "MyTextLabel"
+textLabel.Size = UDim2.new(0, 200, 0, 50) 
+textLabel.Position = UDim2.new(0.5, 120, 0.5, -25)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = ""
+textLabel.TextColor3 = Color3.new(1, 1, 1)
+textLabel.TextSize = 24 
+textLabel.TextScaled = true 
+textLabel.Visible = false 
+textLabel.Parent = screenGui
+
+local function animateImageLabel()
+    local targetPosition = UDim2.new(0.5, -100, 0.5, -100)
+    local currentPosition = UDim2.new(0.5, -100, -1, 0)
+    local steps = 85
+    local waitTime = 0.0002
+
+    for i = 1, steps do
+        currentPosition = UDim2.new(0.5, -100, -1 + (i / steps), 0)
+        imageLabel.Position = currentPosition
+        wait(waitTime)
+    end
+
+    imageLabel.Position = targetPosition
+
+    textLabel.Visible = true
+
+    local text = "Heny Scipt"
+    for i = 1, #text do
+        local randomSymbol = string.char(math.random(33, 47))
+        textLabel.Text = textLabel.Text .. randomSymbol 
+        wait(0.1) 
+    end
+    
+    for i = 1, #text do
+        wait(0.1)
+        textLabel.Text = textLabel.Text:sub(1, i - 1) .. text:sub(i, i) .. textLabel.Text:sub(i + 1)
+    end
+
+    wait(4.8)
+    screenGui:Destroy()
+     print("Загрузилось нахуй")                   
+			wait("0.4")                               
+		print("Скрипт инжектится...")               
+		wait("0.8")                                    
+				print("Скрипт инжектится...")        
+						wait("0.2")
+						print("Уже чуть чуть...")
+						wait("0.8")
+						local Camera = workspace.CurrentCamera
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local LocalPlayer = Players.LocalPlayer
+
+local AimEnabled = false
+local FovEnabled = false
+local TeamCheck = false
+local WallCheck = false
+local AimPart = "Head"
+local FovCircleColor = Color3.fromRGB(255, 255, 255)
+local FovCircleTransparency = 1
+local SmoothAim = false
+local AimSpeed = 0.1
+local AimBind = Enum.KeyCode.U  -- Кнопка, которая будет включать/выключать аим
+
+local FovCircle = Drawing.new("Circle")
+FovCircle.Color = FovCircleColor
+FovCircle.Thickness = 1
+FovCircle.Transparency = FovCircleTransparency
+FovCircle.Visible = FovEnabled
+FovCircle.Filled = false
+FovCircle.NumSides = 64
+FovCircle.Radius = 80
+
+local HighlightedPlayers = {}
+local HighlightColor = Color3.fromRGB(255, 255, 255) -- Цвет Highlight по умолчанию
+local GlowEnabled = false -- Устанавливаем флаг для Glow
+
+-- Функции для обновления FOV и поиска ближайшего игрока
+local function UpdateFov()
+    FovCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+    FovCircle.Visible = FovEnabled
+end
+
+local function GetClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = FovCircle.Radius
+
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild(AimPart) then
+            local targetPart = player.Character[AimPart]
+            local screenPoint, onScreen = Camera:WorldToScreenPoint(targetPart.Position)
+
+            if onScreen then
+                local mousePos = UserInputService:GetMouseLocation()
+                local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - mousePos).Magnitude
+
+                if distance < shortestDistance then
+                    if TeamCheck and player.Team == LocalPlayer.Team then
+                        continue
+                    end
+
+                    if WallCheck and IsBehindWall(targetPart) then
+                        continue
+                    end
+
+                    closestPlayer = player
+                    shortestDistance = distance
+                end
+            end
+        end
+    end
+
+    return closestPlayer
+end
+
+local function IsBehindWall(target)
+    local origin = Camera.CFrame.Position
+    local direction = (target.Position - origin).Unit
+    local ray = Ray.new(origin, direction * (target.Position - origin).Magnitude)
+    local hit = workspace:FindPartOnRayWithIgnoreList(ray, {LocalPlayer.Character, target.Parent})
+    return hit ~= nil
+end
+
+-- Управление клавишей для включения и выключения аима
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == AimBind then
+        AimEnabled = not AimEnabled  -- Переключить состояние аима
+    end
+end)
+
+RunService.RenderStepped:Connect(function()
+    UpdateFov()
+
+    if AimEnabled and FovEnabled then
+        local target = GetClosestPlayer()
+
+        if target and target.Character and target.Character:FindFirstChild(AimPart) then
+            if SmoothAim then
+                TweenService:Create(Camera, TweenInfo.new(AimSpeed, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, target.Character[AimPart].Position)}):Play()
+            else
+                Camera.CFrame = CFrame.new(Camera.CFrame.Position, target.Character[AimPart].Position)
+            end
+        end
+    end
+end)
+
+-- OrionLib для интерфейса
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Aim Heny", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+    Name = "Aim",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddToggle({
+    Name = "Enable Aim",
+    Default = false,
+    Callback = function(Value)
+        FovEnabled = Value
+        FovCircle.Visible = Value
+    end    
+})
+
+Tab:AddDropdown({
+    Name = "Aim Part",
+    Default = "Head",
+    Options = {"Head", "Torso"},
+    Callback = function(Value)
+        AimPart = Value
+    end    
+})
+
+Tab:AddSlider({
+    Name = "FOV Size",
+    Min = 10,
+    Max = 200,
+    Default = 80,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 5,
+    ValueName = "Radius",
+    Callback = function(Value)
+        FovCircle.Radius = Value
+    end    
+})
+
+Tab:AddColorpicker({
+    Name = "FOV Color",
+    Default = Color3.fromRGB(255, 255, 255),
+    Callback = function(Value)
+        FovCircleColor = Value
+        FovCircle.Color = Value
+    end      
+})
+
+Tab:AddSlider({
+    Name = "FOV Transparency",
+    Min = 0,
+    Max = 1,
+    Default = 0.7,
+    Increment = 0.1,
+    ValueName = "Transparency",
+    Callback = function(Value)
+        FovCircleTransparency = Value
+        FovCircle.Transparency = Value
+    end    
+})
+
+Tab:AddToggle({
+    Name = "Team Check",
+    Default = false,
+    Callback = function(Value)
+        TeamCheck = Value
+    end    
+})
+
+Tab:AddToggle({
+    Name = "Smooth Aim",
+    Default = false,
+    Callback = function(Value)
+        SmoothAim = Value
+    end    
+})
+
+Tab:AddSlider({
+    Name = "Aim Speed",
+    Min = 0.1,
+    Max = 1,
+    Default = 0.2,
+    Increment = 0.05,
+    ValueName = "Speed",
+    Callback = function(Value)
+        AimSpeed = Value
+    end    
+})
+
+Tab:AddToggle({
+    Name = "Wall Check",
+    Default = false,
+    Callback = function(Value)
+        WallCheck = Value
+    end    
+})
+
+Tab:AddDropdown({
+    Name = "Aim Bind Key",
+    Default = "U",
+    Options = {"U", "F", "G", "H", "J", "K", "L", "Q", "E", "T", "C", "X", "Z", "R", "Y", "V", "B"},
+    Callback = function(Value)
+        AimBind = Enum.KeyCode[Value]  -- Устанавливаем клавишу для включения/выключения аима
+    end    
+})
+
+-- ESP Tab
+local EspTab = Window:MakeTab({
+    Name = "ESP",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+EspTab:AddToggle({
+    Name = "Glow Players (Highlight)",
+    Default = false,
+    Callback = function(Value)
+        GlowEnabled = Value -- Сохраняем состояние Toggle
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("Head") then
+                if GlowEnabled then
+                    -- Добавляем Highlight, если его нет
+                    if not HighlightedPlayers[player] then
+                        local highlight = Instance.new("Highlight")
+                        highlight.Parent = player.Character
+                        highlight.Name = "GlowHighlight"
+                        highlight.Adornee = player.Character
+                        highlight.FillColor = HighlightColor
+                        highlight.OutlineColor = HighlightColor
+                        highlight.FillTransparency = 0.5
+                        highlight.OutlineTransparency = 0.5
+                        HighlightedPlayers[player] = highlight
+                    end
+                elseif HighlightedPlayers[player] then
+                    HighlightedPlayers[player]:Destroy()
+                    HighlightedPlayers[player] = nil
+                end
+            end
+        end
+    end
+})
+
+EspTab:AddColorpicker({
+    Name = "Highlight Color",
+    Default = Color3.fromRGB(255, 255, 255),
+    Callback = function(Value)
+        HighlightColor = Value
+        -- Обновляем цвет Highlight для всех игроков
+        for _, player in pairs(Players:GetPlayers()) do
+            if HighlightedPlayers[player] then
+                HighlightedPlayers[player].FillColor = Value
+                HighlightedPlayers[player].OutlineColor = Value
+            end
+        end
+    end
+})
+
+-- Подписка на события, чтобы обновлять Highlight игроков, когда они умирают или заходят на сервер
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        if GlowEnabled and not HighlightedPlayers[player] then
+            local highlight = Instance.new("Highlight")
+            highlight.Parent = character
+            highlight.Name = "GlowHighlight"
+            highlight.Adornee = character
+            highlight.FillColor = HighlightColor
+            highlight.OutlineColor = HighlightColor
+            highlight.FillTransparency = 0.5
+            highlight.OutlineTransparency = 0.5
+            HighlightedPlayers[player] = highlight
+        end
+    end)
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+    if HighlightedPlayers[player] then
+        HighlightedPlayers[player]:Destroy()
+        HighlightedPlayers[player] = nil
+    end
+end)
+
+OrionLib:Init()
+
+
+end
+
+animateImageLabel()
