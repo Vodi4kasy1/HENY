@@ -163,6 +163,14 @@ local Button = TabS:CreateButton({
 })
 
 local Button = TabS:CreateButton({
+	Name = "XHub",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/XhubPrem/Universal/refs/heads/main/script.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
 	Name = "Auto Farm coins",
 	Description = nil,
     	Callback = function()
@@ -786,6 +794,14 @@ local Button = TabS:CreateButton({
     	end
 })
 
+local Button = TabS:CreateButton({
+	Name = "2",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/suntisalts/BetaTesting/refs/heads/main/AutofarmV1.lua'))()
+    	end
+})
+
 TabS:CreateSection("Pet Simulator X")
 
 local Button = TabS:CreateButton({
@@ -851,10 +867,90 @@ local Button = TabS:CreateButton({
 TabS:CreateSection("The Rake REMASTERED")
 
 local Button = TabS:CreateButton({
-	Name = "The Rake REMASTERED",
+	Name = "MoonLight",
 	Description = nil,
     	Callback = function()
-         loadstring(game:HttpGet(""))()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/rake"))()
+    	end
+})
+
+TabS:CreateSection("Dig It")
+
+local Button = TabS:CreateButton({
+	Name = "CupPink",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/CupPink/scripts/main/Loader.lua"))()
+    	end
+})
+
+TabS:CreateSection("Brookhaven")
+
+local Button = TabS:CreateButton({
+	Name = "SP",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/Brookhaven"))()
+    	end
+})
+
+TabS:CreateSection("No-Scope Arcade")
+
+local Button = TabS:CreateButton({
+	Name = "Aqua",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/No-Scope%20Arcade.txt"))()
+    	end
+})
+
+TabS:CreateSection("Operation Genesis")
+
+local Button = TabS:CreateButton({
+	Name = "Aqua",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/Operation%20Genesis"))()
+    	end
+})
+
+TabS:CreateSection("House Party Tycoon")
+
+local Button = TabS:CreateButton({
+	Name = "Aqua",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/House%20Party%20Tycoon.txt"))()
+    	end
+})
+
+TabS:CreateSection("Ninja Legends")
+
+local Button = TabS:CreateButton({
+	Name = "nn",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/rndmq/Serverlist/refs/heads/main/Loader"))()
+    	end
+})
+
+TabS:CreateSection("100 Player Slippery Stairs")
+
+local Button = TabS:CreateButton({
+	Name = "Aqua",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/100%20Players%20Slippery%20Stair.txt"))()
+    	end
+})
+
+TabS:CreateSection("Impossible Squid Game")
+
+local Button = TabS:CreateButton({
+	Name = "Dig It",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Sonder-hub/SonderUI/main/Main"))()
     	end
 })
 
