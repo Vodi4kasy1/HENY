@@ -5,25 +5,25 @@ local Window = Luna:CreateWindow({
 	Subtitle = nil, -- A Gray Subtitle next To the main title.
 	LogoID = "82795327169782", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
 	LoadingEnabled = true, -- Whether to enable the loading animation. Set to false if you do not want the loading screen or have your own custom one.
-	LoadingTitle = "Luna Interface Suite", -- Header for loading screen
-	LoadingSubtitle = "by Nebula Softworks", -- Subtitle for loading screen
+	LoadingTitle = "MoonLight [Alpha]", -- Header for loading screen
+	LoadingSubtitle = "by Heny", -- Subtitle for loading screen
 
 	ConfigSettings = {
 		RootFolder = nil, -- The Root Folder Is Only If You Have A Hub With Multiple Game Scripts and u may remove it. DO NOT ADD A SLASH
-		ConfigFolder = "Big Hub" -- The Name Of The Folder Where Luna Will Store Configs For This Script. DO NOT ADD A SLASH
+		ConfigFolder = "MoonLight" -- The Name Of The Folder Where Luna Will Store Configs For This Script. DO NOT ADD A SLASH
 	},
 
 	KeySystem = false, -- As Of Beta 6, Luna Has officially Implemented A Key System!
 	KeySettings = {
-		Title = "Luna Example Key",
-		Subtitle = "Key System",
-		Note = "Best Key System Ever! Also, Please Use A HWID Keysystem like Pelican, Luarmor etc. that provide key strings based on your HWID since putting a simple string is very easy to bypass",
+		Title = "",
+		Subtitle = "",
+		Note = "",
 		SaveInRoot = false, -- Enabling will save the key in your RootFolder (YOU MUST HAVE ONE BEFORE ENABLING THIS OPTION)
 		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-		Key = {"Example Key"}, -- List of keys that will be accepted by the system, please use a system like Pelican or Luarmor that provide key strings based on your HWID since putting a simple string is very easy to bypass
+		Key = {""}, -- List of keys that will be accepted by the system, please use a system like Pelican or Luarmor that provide key strings based on your HWID since putting a simple string is very easy to bypass
 		SecondAction = {
 			Enabled = true, -- Set to false if you do not want a second action,
-			Type = "Link", -- Link / Discord.
+			Type = "", -- Link / Discord.
 			Parameter = "" -- If Type is Discord, then put your invite link (DO NOT PUT DISCORD.GG/). Else, put the full link of your key system here.
 		}
 	}
@@ -84,7 +84,7 @@ Luna:Notification({
 	Icon = "notifications_active",
 	ImageSource = "Material",
 	Content = "Link to telegram copied to your clipbroad!"
-})
+				)}
     	end
 })
 
@@ -98,21 +98,135 @@ local Button = TabO:CreateButton({
     	end
 })
 
-Window:CreateHomeTab({
-	SupportedExecutors = {}, -- A Table Of Executors Your Script Supports. Add strings of the executor names for each executor.
-	DiscordInvite = "1234", -- The Discord Invite Link. Do Not Include discord.gg/ | Only Include the code.
-	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
-})
-
 --/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
                                                                                                    --\\SCRIPTS//--
 
 TabS:CreateSection("Your Bizzare Adventure")
 
+local Button = TabS:CreateButton({
+	Name = "Bitch Boy v1",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/MainGui.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Bitch Boy v2",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/v2.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Bitch Boy v3",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/v3.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Xenon",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Vezise/vezzyscripts/main/xenonv3_source"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Sbr Farm",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Vezise/vezzyscripts/main/ybaisassv3"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Era hub v2",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7b0411235ac7e2d87839e0d070ceaa7b.lua"))()
+    	end
+})
+
 TabS:CreateSection("Murder Mystery 2")
 
+local Button = TabS:CreateButton({
+	Name = "YARHM",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Auto Farm coins",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconLords/Random-Shit/main/mm2.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Foggy",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/FOGOTY/mm2-piano-reborn/refs/heads/main/scr"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "YHUB",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Luarmor123/community-Y-HUB/refs/heads/main/YHUB-MM2"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Higlight",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Lite"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Lunar",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/vwSaraa/LunarHub/main/mm2"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "idk name",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Free'))()
+    	end
+})
+
 TabS:CreateSection("Dead Rails")
+
+local Button = TabS:CreateButton({
+	Name = "Speed Wave",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(("https://raw.githubusercontent.com/speedwavevip/scriptspeed/refs/heads/main/Dead%20Ralis.lua")))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Speed X",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+    	end
+})
 
 TabS:CreateSection("Ficsh")
 
@@ -1244,5 +1358,13 @@ local Button = TabU:CreateButton({
 	Description = nil,
     	Callback = function()
          loadstring(game:HttpGet('https://weinzspace.com/revamp.lua'))()
+    	end
+})
+
+local Button = TabU:CreateButton({
+	Name = "Universal Hub",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Alexcirer/Alexcirer/refs/heads/main/v20p"))()
     	end
 })
