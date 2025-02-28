@@ -228,19 +228,326 @@ local Button = TabS:CreateButton({
     	end
 })
 
+local Button = TabS:CreateButton({
+	Name = "Спизженно 228 EZ",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Vodi4kasy1/HENY/refs/heads/main/s.txt", true))()
+    	end
+})
+
 TabS:CreateSection("Ficsh")
+
+local Button = TabS:CreateButton({
+	Name = "Spase Hub",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://you.whimper.xyz/sources/rb/fisch.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Fisch",
+	Description = nil,
+    	Callback = function()
+         _G.Theme = "Dark"
+--Themes: Light, Dark, Red, Mocha, Aqua and Jester
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/Fisch.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Huzz",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/notjohnnylol/Fisch/refs/heads/main/HuzzHub"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "YHUB",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Luarmor123/community-Y-HUB/refs/heads/main/Fisch-YHUB"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Fluxware",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Fsploit/Fluxware/refs/heads/main/Fisch-V1-Fluxware-By-Fsploit.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Average",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://gist.githubusercontent.com/AverageHub/1980eccce4133d77fb24d166dc296125/raw/2d9c88acc21a302d92aed0e8b6f0dcd287c8b96b/gistfile1.txt"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "DEFUSAL",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/Fy7ZCnRp"))() 
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "NYX",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/NYX8HUB/premium/refs/heads/main/script"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Naoki",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://naokihub.vercel.app",true))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Speed X",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+    	end
+})
 
 TabS:CreateSection("Blox Fruit")
 
+local Button = TabS:CreateButton({
+	Name = "Attack",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/KOBENFF/sdfd/refs/heads/main/Koatta.txt"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Stravberry",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/CheemsNhuChiAl/Sotringhuhu/main/StrawberryHubBeta1.35"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Realredz",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Min Gaming",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://paste.gg/p/anonymous/df420863c4314e888875e155c7c5833a/files/d39e859a821041e38525f8f53eb68a88/raw"))() 
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Annie Hub",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/1st-Mars/Annie/main/1st.lua'))() 
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Speed X",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Neva",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2'))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Slimex",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Slimexiuem/Slimexhub/main/Slimex-hub"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Master",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/onepicesenpai/onepicesenpai/main/onichanokaka'))() 
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Wolf",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://link.trwxz.com/LS-Wolf-Hub'))() 
+    	end
+})
+
 TabS:CreateSection("Evade")
+
+local Button = TabS:CreateButton({
+	Name = "Moon",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/whiteinian/MoonHub/main/Main'))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Tbao",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubEvade"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Hydra",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Main.lua"), true))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Evade gui",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Evade/main.lua"))()
+    	end
+})
 
 TabS:CreateSection("Sonic Speed Simulator")
 
+local Button = TabS:CreateButton({
+	Name = "idk name",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/destylol/catalyst/itachi/main.lua'))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Dex",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/BinaryDex/DexHub/main/Init"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Phantom",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/destylol/masterhubv311/itachi/Main.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Astral",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/blooodlines/astralhook/main/9049840490"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Master",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/destylol/masterhubv311/itachi/Main.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "idk",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Luciquad/credit/main/sonicspeedsimulator.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "idk2",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Sonic Speed Simulator/main.lua", true))()
+    	end
+})
+
 TabS:CreateSection("Da Hood")
+
+local Button = TabS:CreateButton({
+	Name = "SPACEX",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/spacexrandom/Lua/main/DaHood"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "SWAGMODE",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002"))()
+    	end
+})
 
 TabS:CreateSection("Meme Sea")
 
+local Button = TabS:CreateButton({
+	Name = "Elgato",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(('https://raw.githubusercontent.com/FrostLua/Krakles/main/ElgatoHub/Loader.lua'),true))()
+    	end
+})
+
 TabS:CreateSection("The Strongest Battlegrounds")
+
+local Button = TabS:CreateButton({
+	Name = "1",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/Mautiku/ehh/main/strong%20guest.lua.txt'))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "2",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Speed X",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+    	end
+})
 
 TabS:CreateSection("Forsaken")
 
@@ -248,31 +555,312 @@ TabS:CreateSection("Jujutsu Shenanigans")
 
 TabS:CreateSection("Counter Blox")
 
+local Button = TabS:CreateButton({
+	Name = "midnight.cc",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/laeraz/midnightcc/main/public.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Blox Fun",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/anim9r/BloxFun/main/AutoUpdate.lua"))()
+    	end
+})
+
 TabS:CreateSection("Blade Ball")
+
+local Button = TabS:CreateButton({
+	Name = "REDz",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Astra",
+	Description = nil,
+    	Callback = function()
+         getgenv().Auth = "freenium_auth"
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b6cc646cf4d4eb44647236da9b7fa2f0.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "NEXAM",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Visaul",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a5945467f3b9388503ca653c0ea49cba.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Blox",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(('https://raw.githubusercontent.com/malicious-dev/RobloxScripting/main/bladeball.lua'),true))()
+    	end
+})
 
 TabS:CreateSection("Doors")
 
+local Button = TabS:CreateButton({
+	Name = "Tatsumaki",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Tatsumaki49/main/123/Roach"))();
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Speed X",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Doors.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "hueta",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(('https://pastebin.com/raw/GY5dvcJq')))() 
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Farm",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0keys"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Spawn",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI'))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Doors",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingResources/GamingResources-Script-Hub/main/Key System", true))()
+    	end
+})
+
 TabS:CreateSection("Creatures Of Sonaria")
+
+local Button = TabS:CreateButton({
+	Name = "FrostByte",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/alyssagithub/Scripts/refs/heads/main/FrostByte/Initiate.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "pizda",
+	Description = nil,
+    	Callback = function()
+         local Ver, Script =
+pcall(game.HttpGet, game, "https://raw.githubusercontent.com/albinosenpai/creaturas2/main/gay2")
+if Ver then
+loadstring(Script)()
+else
+game:GetService("Players").LocalPlayer:Kick("Failed to connect to github")
+end
+    	end
+})
 
 TabS:CreateSection("Death Ball")
 
+local Button = TabS:CreateButton({
+	Name = "Depth",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/sirapobsriumang/Death-Bal/main/Op-Script-by-me"))() 
+    	end
+})
+
 TabS:CreateSection("Westbound")
+
+local Button = TabS:CreateButton({
+	Name = "Westbound",
+	Description = nil,
+    	Callback = function()
+         loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Exunys/westbound.pro-Utilites/main/Main.lua"))()
+    	end
+})
 
 TabS:CreateSection("Blue Lock")
 
+local Button = TabS:CreateButton({
+	Name = "blevok",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Bhusant/Pillar-chase/refs/heads/main/KeySystem"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Rinns",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+    	end
+})
+
 TabS:CreateSection("Prison Life")
+
+local Button = TabS:CreateButton({
+	Name = "Night",
+	Description = nil,
+    	Callback = function()
+         -- // Jayden's Hub loader // --
+
+_G.JH_LANGUAGE_SELECTED = "ru"; -- Sets the script language to russian (Supports 200+ languages)
+
+getgenv().JH_FAST_LOAD = true; -- Loads jayden's hub instantly.
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Jxys3rrV/jaydens-hub/main/script'))();
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Lightux",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+    	end
+})
 
 TabS:CreateSection("Arsenal")
 
+local Button = TabS:CreateButton({
+	Name = "Weed",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ex55/weed-client/refs/heads/main/main.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Plutonium",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/main/Plutonium.Loader.lua", true))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Tbao",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))() 
+    	end
+})
+
+TabS:CreateSection("Build a boat for treasure")
+
+local Button = TabS:CreateButton({
+	Name = "Stupid",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/StupidProAArsenal/main/main/ueiq', true))()
+    	end
+})
+
 TabS:CreateSection("Pet Simulator X")
+
+local Button = TabS:CreateButton({
+	Name = "1",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Wyrlix/PSX/main/farm"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Jmes",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/jmesfo0/RobloxScripts/main/psx-jmes.lua"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "Project Meow",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://rawscripts.net/raw/x2-Pet-Simulator-X!-Project-Meow-5322"))()
+    	end
+})
 
 TabS:CreateSection("Piggy")
 
+local Button = TabS:CreateButton({
+	Name = "ПИздец",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/MX3LyiWu", true))()
+    	end
+})
+
 TabS:CreateSection("Tower Of Hell")
+
+local Button = TabS:CreateButton({
+	Name = "m1kp",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet'https://raw.githubusercontent.com/m1kp0/tower_of_hell/refs/heads/main/toh.lua')()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "2",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/houza233/ShouHub/main/ToF"))()
+    	end
+})
+
+local Button = TabS:CreateButton({
+	Name = "ADMINUS",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/AdminusGames/Tower_Of_Hell/main/.lua", true))()
+    	end
+})
+
+TabS:CreateSection("The Rake REMASTERED")
+
+local Button = TabS:CreateButton({
+	Name = "The Rake REMASTERED",
+	Description = nil,
+    	Callback = function()
+         loadstring(game:HttpGet(""))()
+    	end
+})
 
 --/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
-                            --\\SCRIPTS UNIVERSAL//--
+                               --\\SCRIPTS UNIVERSAL//--
 
 TabU:CreateSection("Universal Scripts")
 
